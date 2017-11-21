@@ -49,8 +49,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :project_one, ProjectOne.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("PG_USERNAME"),
+  password: System.get_env("PG_PASSWORD"),
   database: "project_one_dev",
   hostname: "localhost",
   pool_size: 10

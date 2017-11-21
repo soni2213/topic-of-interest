@@ -1,0 +1,18 @@
+<h2>Show topic of interest</h2>
+
+<ul>
+
+  <li>
+    <strong>Topic name:</strong>
+    <%= @topic_of_interest.name %>
+  </li>
+
+  <li>
+    <strong>Short desc:</strong>
+    <%= @topic_of_interest.short_desc %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: topic_of_interest_path(@conn, :edit, @topic_of_interest) %></span>
+<span><%= link "Back", to: topic_of_interest_path(@conn, :index) %></span>

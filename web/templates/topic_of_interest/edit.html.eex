@@ -1,0 +1,6 @@
+<h2>Edit topic of interest</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: topic_of_interest_path(@conn, :update, @topic_of_interest) %>
+
+<span><%= link "Back", to: topic_of_interest_path(@conn, :index) %></span>

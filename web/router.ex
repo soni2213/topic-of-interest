@@ -16,6 +16,9 @@ defmodule ProjectOne.Router do
   scope "/", ProjectOne do
     pipe_through :browser # Use the default browser stack
 
+    resources "/users", UserController # for user actions.
+    resources "/topics_of_interests", TopicOfInterestController # for topic of interests.
+
     get "/", PageController, :index
   end
 

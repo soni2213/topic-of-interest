@@ -1,0 +1,28 @@
+<h2>Listing topics of interests</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Topic name</th>
+      <th>Short desc</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for topic_of_interest <- @topics_of_interests do %>
+    <tr>
+      <td><%= topic_of_interest.name %></td>
+      <td><%= topic_of_interest.short_desc %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: topic_of_interest_path(@conn, :show, topic_of_interest), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: topic_of_interest_path(@conn, :edit, topic_of_interest), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: topic_of_interest_path(@conn, :delete, topic_of_interest), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New topic of interest", to: topic_of_interest_path(@conn, :new) %></span>
